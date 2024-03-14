@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Include navigation or header content if necessary -->
+        </header>
+        
+        <main>
+            <h1>Terms and Conditions</h1>
+            <div class="terms-content">
+                <!-- Your terms and conditions text goes here -->
+                <p>Please read the terms and conditions carefully before accepting.</p>
+                <!-- Add more terms content as needed -->
+            </div>
+            <form action="/connect" method="post">
+                <button type="submit" class="accept-button">Accept & Connect</button>
+            </form>
+        </main>
+        
+        <footer>
+            <!-- Include footer content if necessary -->
+        </footer>
+    </div>
+</body>
+</html>

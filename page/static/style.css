@@ -1,0 +1,72 @@
+/* Basic Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('grid.png'); /* You'll need to create a similar grid pattern */
+    background-repeat: repeat;
+}
+
+.form-container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    border: 1px solid #333; /* Subtle border */
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #e63946; /* A vivid color similar to Hack TUES heading */
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+p {
+    color: #aaa; /* Lighter text for paragraphs */
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 0.8em;
+    border: none;
+    background-color: #e63946; /* Vivid color for button */
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d62828; /* Darker shade on hover */
+}
+
+/* Additional styling for the success page */
+.success-message {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 50px;
+  }

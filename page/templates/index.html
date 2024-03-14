@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captive Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Connect to Network</h1>
+        <form action="/connect" method="post">
+            <img src="static/hacktues.png" alt="Description of the image" class="center" width="1900" height="100">
+            <p>Please accept the terms and conditions to connect to the network.</p>
+            <button type="submit">Accept & Connect</button>
+        </form>
+    </div>
+</body>
+</html>
