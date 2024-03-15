@@ -18,3 +18,6 @@ RAPD е решение, което активно сканира мрежите 
 - "Active" режим:
 Активно следи за нови Wi-Fi мрежи, съответстващи на целевото SSID, но с различни BSSIDs (физически адреси) от познатите.
 При откриване на такава мрежа се генерира аларма за потенциален RogueAP/EvilTwin.
+
+## Презентация:
+https://docs.google.com/presentation/d/1giGU_GdeLNhxInzQW-7Rwr_oRiaeujAadX8Zrx8PGZc/edit?usp=sharing
