@@ -1,0 +1,44 @@
+#!/bin/bash
+
+LEARNING_FILE="known.txt"
+
+search_wifi_learning() {
+    ssid="$1"
+    echo "Learning mode: Searching for known WiFi networks: $ssid"
+    nmcli device wifi list | grep "$ssid" | awk '{print $1}' | grep -oE '([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}' | sort -u > "$LEARNING_FILE"
+}
+
+search_wifi_active() {
+    ssid="$1"
+    echo "Active mode: Searching for rougue WiFi networks with SSID: $ssid"
+    while true; do
+        nmcli device wifi list | grep "$ssid" | awk '{print $1}' | grep -oE '([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}' | sort -u > temp.txt
+        while IFS= read -r line; do
+            if ! grep -q "$line" "$LEARNING_FILE"; then
+                echo "ROUGE AP!:"
+                nmcli device wifi list | grep "$line"
+            fi
+        done < temp.txt
+        sleep 5
+    done
+}
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 <mode> <SSID>"
+    echo "Modes:"
+    echo "  -learning   Learning mode (lists existing networks with the given SSID and stores them)"
+    echo "  -active     Active mode (searches for rouge networks with the given SSID)"
+    exit 1
+fi
+
+mode="$1"
+ssid="$2"
+
+if [ "$mode" == "-learning" ]; then
+    search_wifi_learning "$ssid"
+elif [ "$mode" == "-active" ]; then
+    search_wifi_active "$ssid"
+else
+    echo "Invalid mode. Please use '-learning' or '-active'."
+    exit 1
+fi
