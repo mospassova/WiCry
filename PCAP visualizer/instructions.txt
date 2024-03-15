@@ -1,0 +1,7 @@
+To run the program correctly you should install the GeoLite2-City.mmdb file and correct the path in main.py. 
+You should also install the folowing requirements:
+scapy
+matplotlib
+networkx
+maxminddb
+graphviz
