@@ -5,6 +5,11 @@ app = Flask(__name__)
 
 HTML = '''
 <!doctype html>
+<script>
+  function showAlert() {
+    alert("The output of the program is in the console.");
+  }
+</script>
 <html>
 <head>
 <title>SSID Command Runner</title>
@@ -14,9 +19,9 @@ HTML = '''
   <form method="post">
     SSID: <input type="text" name="ssid"><br>
     <input type="submit" name="action" value="Learn">
-    <input type="submit" name="action" value="Active">
+    <input type="submit" name="action" value="Active" onclick="showAlert()">
     <input type="submit" name="action" value="known.txt"><br><br>
-    <textarea rows="1" cols="50" readonly>The RogueAPs/Evil Twins candidates are shown in bash</textarea>
+    <textarea rows="1" cols="50" readonly>The RogueAP/Evil Twin candidates are shown in the console</textarea>
   </form>
 </body>
 </html>
